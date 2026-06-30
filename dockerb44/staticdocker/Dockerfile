@@ -14,7 +14,7 @@ ADD https://templatemo.com/download/templatemo_623_novapay  /var/www/html/templa
  
  
  WORKDIR /var/www/html 
-#changing/switching directories to /var/www/html 
+ #changing/switching directories to /var/www/html 
 
 RUN unzip templatemo_623_novapay.zip && \  
     mv templatemo_623_novapay/* /var/www/html/
