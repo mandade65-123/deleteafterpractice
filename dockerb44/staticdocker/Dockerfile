@@ -12,8 +12,9 @@ RUN apt-get update  && \
 ADD https://templatemo.com/download/templatemo_623_novapay  /var/www/html/templatemo_623_novapay.zip
  #will download the static page from internet and move it in /var/www/html location 
  
- WORKDIR /var/www/html 
-   #changing/switching directories to /var/www/html 
+ WORKDIR 
+        /var/www/html 
+#changing/switching directories to /var/www/html 
 
 RUN unzip templatemo_623_novapay.zip && \  
     mv templatemo_623_novapay/* /var/www/html/
