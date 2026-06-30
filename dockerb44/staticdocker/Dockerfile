@@ -13,7 +13,6 @@ ADD https://templatemo.com/download/templatemo_623_novapay /var/www/html/templat
 # add will download static page from internet and /var/www/html location
 
 
-
  WORKDIR /var/www/html 
  #changing/switching directories to /var/www/html 
 
