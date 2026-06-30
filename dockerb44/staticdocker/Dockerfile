@@ -10,7 +10,7 @@ RUN apt-get update && \
 #we installed webserver and unzip package and updated the base image
 
 ADD https://templatemo.com/download/templatemo_623_novapay /var/www/html/templatemo_623_novapay.zip
-# add will download static page from internet and /var/www/html location
+# add will download static page from internet and move it in /var/www/html location
 
 
  WORKDIR /var/www/html 
