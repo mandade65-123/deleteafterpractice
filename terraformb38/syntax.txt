@@ -1,0 +1,187 @@
+
+
+terraform blocks 
+provider - to setup a authenticaed connection between the terraform and cloud provider(aws)
+resource - to creare infrastucture ec2 , s3 , vpc we use this resource block in tf
+ouput
+variables 
+module
+provisioners
+backend 
+data 
+loops 
+
+tf - hcl 
+tfblockname  
+
+provider "cloudprovidername-uniquename" {
+      key=value 
+      agruements
+}
+
+provider "aws" {
+  region     = "us-west-2"
+  access_key = "my-access-key"
+  secret_key = "my-secret-key"
+
+}
+
+resource "cloudprovidername_resourcename" "uniquename" {
+
+}
+
+resource "aws_ec2"  "webserver" {
+     instancetype = t2.micro 
+     agruements
+}
+
+resource "aws_ec2"  "dbserver" {
+    
+}
+
+resource "aws_instance" "webserver" {
+   key_name 
+   instance_type 
+   vpc_security_group_ids
+   disable_api_termination  
+   tags = {
+    Name = "Webserver"
+  }
+
+}
+
+
+variables block - 
+
+
+  key_name = "abhijeet"
+   ami = "ami-078f95be0757084a3" 
+   instance_type = var.this_instype  var.uniqueblocname
+   vpc_security_group_ids = ["sg-0e924451d7773195c"]
+   tags = {
+    Name = "Webserver" 
+
+  key_name = "abhijeet"
+   ami = "ami-078f95be0757084a3" 
+   instance_type = "t3.micro" 
+   vpc_security_group_ids = ["sg-0e924451d7773195c"]
+   count = var.this_instnos
+   tags = {
+    Name = "Webserver"
+  }
+
+
+
+
+variable "uniqueblocname" {
+
+} 
+
+variable "this_instype" {
+    default = "t3.micro" 
+}
+
+data types 
+
+"two" , "2"  , "t3.micro"  = string 
+ 2 , 6 , 7 = number int 
+ 3.4 , 5.4 = float 
+ true or flase = boolean 
+
+
+variable "this_instnos" {
+  default = 4
+}
+var.uniqueblocname
+complex 
+
+list    ["2" , 2 , true , ] 
+map   = {
+   key: value 
+   ec2instance: "t3.micro" 
+}
+tuple 
+dictory  {}
+
+output "uniqueblockname" {
+  value  = resourceblockuniquenme.attribute_value
+}
+
+output "instanceip" {
+  value  = aws_instance.webserver.public_ip
+}
+
+implicit = 
+explicit = depends_on = []
+
+data block ? 
+ec2 how to write script using userdata 
+
+data block !!!
+existing infrastucture which is not created using terraform !!! 
+we have to add such existing infra to our tf based infra 
+
+data "unique_resource_name" "uniqueblockname" {
+
+} 
+
+data "aws_security_groups" "defaultsg-search" {
+   name = "default"
+}
+
+data.unique_resource_name.uniqueblockname
+
+
+
+module "ec2" {
+   key = value 
+}
+
+module "vpc" {
+
+}
+
+
+module "R53" {
+
+} 
+
+string = "data"
+number = 1 
+float = 1.2 
+bool = true  
+
+compelex data types 
+
+terraform 
+list 
+map 
+any 
+
+----------------
+tuples 
+sets 
+dictionary 
+
+list = [ "data" , 1 , 1.2 , true ] 
+           0      1    2     3
+map = { key: value  }
+
+map = { 
+  amiid = "dsfdsgfgregrs" ,
+  securitygp = "sg-12213212142"
+  count = 1 
+  bool = true
+}
+
+any = {
+list = [ "data" , 1 , 1.2 , true ]  , 
+map = { 
+  amiid = "dsfdsgfgregrs" ,
+  securitygp = "sg-12213212142"
+  count = 1 
+  bool = true
+}
+
+
+}
